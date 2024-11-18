@@ -2,7 +2,7 @@
 :: Ensure the script runs with admin privileges
 net session >nul 2>&1
 if %errorlevel% neq 0 (
-    echo Requesting administrative privileges...
+    
     powershell -Command "Start-Process '%~f0' -Verb RunAs"
     exit /b
 )
@@ -111,7 +111,7 @@ set /p NOTE="Enter a custom note for this computer: "
 set OUTPUT_FILE=%~dp0list_of_devices.txt
 (
     echo =======================================================
-    echo          Configuration Log
+    echo          Computer IP address Information
     echo =======================================================
     echo Computer Name: %COMPUTER_NAME%
     echo Connection Type: %CONN_TYPE%
